@@ -1,14 +1,19 @@
-import React from "react";
+import { CheckoutButton, CheckoutButtonText } from "../styles";
 import { List, Spinner, Text } from "native-base";
+
+import CartItem from "./CartItem";
+import React from "react";
+import candyStore from "../stores/candyStore";
+import cartStore from "../stores/cartStore";
 import { observer } from "mobx-react";
 
 // Stores
-import cartStore from "../stores/cartStore";
-import candyStore from "../stores/candyStore";
+
+
 
 // Components
-import CartItem from "./CartItem";
-import { CheckoutButton, CheckoutButtonText } from "../styles";
+
+
 
 const CartList = () => {
   if (candyStore.loading) return <Spinner />;
@@ -17,7 +22,7 @@ const CartList = () => {
       ...candyStore.getCandyById(item.candyId),
       quantity: item.quantity,
     }))
-    .map((item) => <CartItem item={item} key={item.name} />);
+    .map((item) => <CartItem item={item} key={item.id} />);
   return (
     <>
       <List>{cartList}</List>

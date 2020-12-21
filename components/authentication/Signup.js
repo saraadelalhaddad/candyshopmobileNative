@@ -22,7 +22,7 @@ const Signup = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signup(user);
-    if (authStore.user) navigation.popToTop(); // look into documentation https://reactnavigation.org/docs/stack-actions
+    if (authStore.user) navigation.pop(); // look into documentation https://reactnavigation.org/docs/stack-actions
   };
 
   return (
@@ -60,7 +60,7 @@ const Signup = ({ navigation }) => {
       <AuthButton onPress={handleSubmit}>
         <AuthButtonText>Sign up</AuthButtonText>
       </AuthButton>
-      <AuthOther onPress={() => navigation.navigate("Signin")}>
+      <AuthOther onPress={() => navigation.replace("Signin")}>
         Click here to sign in!
       </AuthOther>
     </AuthContainer>

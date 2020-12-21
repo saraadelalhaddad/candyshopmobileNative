@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
 import { Icon } from "native-base";
+import styled from "styled-components/native";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -125,13 +125,13 @@ export const AuthButton = styled.TouchableOpacity`
   align-items: center;
   padding: 5%;
   background-color: pink;
-  margin-top: 30;
+  margin-top: 30px;
 `;
 
 export const AuthButtonText = styled.Text`
   color: #fcfdff;
   font-weight: bold;
-  font-size: 18;
+  font-size: 18px;
 `;
 
 export const AuthOther = styled.Text`

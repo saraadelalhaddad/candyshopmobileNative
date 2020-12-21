@@ -19,7 +19,7 @@ const Signin = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.goBack();
+    if (authStore.user) navigation.pop();
   };
 
   return (
@@ -41,7 +41,7 @@ const Signin = ({ navigation }) => {
       <AuthButton onPress={handleSubmit}>
         <AuthButtonText>Sign in</AuthButtonText>
       </AuthButton>
-      <AuthOther onPress={() => navigation.navigate("Signup")}>
+      <AuthOther onPress={() => navigation.replace("Signup")}>
         Click here to register!
       </AuthOther>
     </AuthContainer>
